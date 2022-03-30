@@ -36,14 +36,13 @@ jobs:
           echo test, and deploy your project.
 
       - name: Restore dotnet tools
-      run: dotnet tool restore
-      working-directory: ${{ env.WORKING_DIRECTORY }}
-    - name: Restore
-      run: dotnet restore "${{ env.WORKING_DIRECTORY }}"
-    - name: Build
-      run: dotnet build "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-restore
-    - name: Test
-      run: dotnet test "${{ env.WORKING_DIRECTORY }}" --no-build
-    - name: Publish
-      run: dotnet publish "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} /p:UseAppHost=false --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
-      
+        run: dotnet tool restore
+        working-directory: ${{ env.WORKING_DIRECTORY }}
+      - name: Restore
+        run: dotnet restore "${{ env.WORKING_DIRECTORY }}"
+      - name: Build
+        run: dotnet build "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-restore
+      - name: Test
+        run: dotnet test "${{ env.WORKING_DIRECTORY }}" --no-build
+      - name: Publish
+        run: dotnet publish "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} /p:UseAppHost=false --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
