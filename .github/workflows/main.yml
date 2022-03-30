@@ -35,13 +35,7 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-
-       - name: Setup Dotnet 3.3.x
-         uses: actions/setup-dotnet@v1
-         with:
-           dotnet-version: '3.3.x'
-    
- # Runs a build project
+      # Runs a build project
       - name: dotnet build and publish
         run: |
           dotnet restore
