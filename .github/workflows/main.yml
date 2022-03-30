@@ -35,6 +35,11 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
+      - name: Create folder
+        run: |
+          mkdir -p '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp' && cp -R dist '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp'
+          ls '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp'
+
       # Runs a build project
       - name: dotnet build and publish
         run: |
