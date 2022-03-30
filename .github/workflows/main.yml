@@ -35,14 +35,14 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-      - name: Restore dotnet tools
-        run: dotnet tool restore
-        working-directory: ${{ env.WORKING_DIRECTORY }}
-      - name: Restore
-        run: dotnet restore "${{ env.WORKING_DIRECTORY }}"
-      - name: Build
-        run: dotnet build "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-restore
-      - name: Test
-        run: dotnet test "${{ env.WORKING_DIRECTORY }}" --no-build
-      - name: Publish
-        run: dotnet publish "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} /p:UseAppHost=false --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
+      - name: Install Nuget
+        uses: nuget/setup-nuget@v1
+        with:
+          nuget-version: ${{ env.NUGET_VERSION}}
+
+      # Runs a build project
+      - name: dotnet build and publish
+        run: |
+          dotnet restore
+          dotnet build --configuration Release
+          dotnet publish -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp'
