@@ -50,23 +50,21 @@ jobs:
           dotnet build --configuration Release
           dotnet publish -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp'
 
-    # Run create resouce
-      - name: 'Create resource'
-         run: |
-           az cognitiveservices account create 
-           --name anomaly-detector-resource 
-           --resource-group cognitive-services-resource-group 
-           --kind AnomalyDetector 
-           --sku F0 
-           --location westus2 
-           --yes
-  
+      # Run create resouce
+      - name: "Create resource"
+        run: |
+          az cognitiveservices account create \
+          --name anomaly-detector-resource \ 
+          --resource-group cognitive-services-resource-group \
+          --kind AnomalyDetector \
+          --sku F0  \
+          --location westus2 \
+          --yes
+
       # Runs the deployment
-      - name: 'Run Azure webapp deploy action using publish profile credentials'
+      - name: "Run Azure webapp deploy action using publish profile credentials"
         uses: azure/webapps-deploy@v2
-        with: 
+        with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }} # Replace with your app name
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE  }} # Define secret variable in repository settings as per action documentation
-          package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp'
-
-      
+          package: "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp"
