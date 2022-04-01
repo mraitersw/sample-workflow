@@ -53,12 +53,12 @@ jobs:
       # Run create resouce
       - name: "Create resource"
         run: |
-          az cognitiveservices account create \
-          --name anomaly-detector-resource \ 
-          --resource-group teide-temp \
-          --kind AnomalyDetector \
-          --sku F0  \
-          --location westus2 \
+          az cognitiveservices account create 
+          --name anomaly-detector-resource 
+          --resource-group teide-temp 
+          --kind AnomalyDetector 
+          --sku F0  
+          --location westus2 
           --yes
 
       # Runs the deployment
