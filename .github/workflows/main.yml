@@ -55,7 +55,7 @@ jobs:
         run: |
           az cognitiveservices account create \
           --name anomaly-detector-resource \ 
-          --resource-group cognitive-services-resource-group \
+          --resource-group teide-temp \
           --kind AnomalyDetector \
           --sku F0  \
           --location westus2 \
