@@ -49,6 +49,11 @@ jobs:
           dotnet restore
           dotnet build --configuration Release
           dotnet publish -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp'
+          
+      # Log into Azure
+      - uses: azure/login@v1
+      with:
+      creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       # Deploy resources to Azure
       - name: Run ARM deploy
