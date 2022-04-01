@@ -53,7 +53,7 @@ jobs:
       # Run create resouce
       - name: "Create resource"
         run: |
-          az login --tenant b25036e3-de39-4fec-a4aa-bda41b870d38
+          az login --tenant b25036e3-de39-4fec-a4aa-bda41b870d38 &&
           az cognitiveservices account create --name myresource --resource-group teide-env --kind Face --sku S0 --location WestEurope --yes
       # Runs the deployment
       - name: "Run Azure webapp deploy action using publish profile credentials"
