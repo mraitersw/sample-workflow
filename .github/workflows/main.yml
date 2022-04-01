@@ -53,14 +53,7 @@ jobs:
       # Run create resouce
       - name: "Create resource"
         run: |
-          az cognitiveservices account create 
-          --name anomaly-detector-resource 
-          --resource-group teide-temp 
-          --kind AnomalyDetector 
-          --sku F0  
-          --location westus2 
-          --yes
-
+          az cognitiveservices account create --name myresource --resource-group teide-env --kind Face --sku S0 --location WestEurope --yes
       # Runs the deployment
       - name: "Run Azure webapp deploy action using publish profile credentials"
         uses: azure/webapps-deploy@v2
