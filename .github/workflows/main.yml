@@ -14,6 +14,8 @@ on:
   workflow_dispatch:
 
 env:
+  AZURE_WEBAPP_PACKAGE_PATH: "."
+  AZURE_WEBAPP_NAME: "echoSample"
   COGNITIVE_PVA_REGION: "westus"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
