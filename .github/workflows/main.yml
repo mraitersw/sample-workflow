@@ -52,8 +52,8 @@ jobs:
 
       # Log into Azure
       - uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       # Deploy resources to Azure
       - name: Run ARM deploy
