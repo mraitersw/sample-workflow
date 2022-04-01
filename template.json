@@ -1,13 +1,19 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",    
+    "contentVersion": "1.0.0.0", 
+    "parameters": {
+        "accounts_Cognitive_PVA_Region": {
+            "defaultValue": "westus",
+            "type": "String"
+        }
+    },   
     "variables": {},
     "resources": [
         {
             "type": "Microsoft.CognitiveServices/accounts",
             "apiVersion": "2021-10-01",
             "name": "samplewebworflow",
-            "location": "westus",
+            "location": "[parameters('accounts_Cognitive_PVA_Region')]",
             "sku": {
                 "name": "S0"
             },
