@@ -5,9 +5,18 @@
         "accounts_Cognitive_PVA_Region": {
             "defaultValue": "westus",
             "type": "String"
+        },
+        "vaultName": {
+            "type": "string",
+            "metadata": {
+                "description": "Specifies the name of the KeyVault, this vault must already exist."
+            }
         }
+
     },   
-    "variables": {},
+    "variables": {
+        "StorageAccountName":"samplewebworflow"
+    },
     "resources": [
         {
             "type": "Microsoft.CognitiveServices/accounts",
@@ -27,6 +36,13 @@
                 "customSubDomainName": "samplewebworflow",
                 "publicNetworkAccess": "Enabled"
             }
+            
         }
-    ]
+    ],
+    "outputs": {
+        "rkkeyvault": {
+          "value": "[Concat('DefaultEndpointsProtocol=https;AccountName=',variables('StorageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('StorageAccountName')), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).keys[0].value)]",  
+          "type": "string"
+        }
+      }   
 }
