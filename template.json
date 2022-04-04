@@ -5,14 +5,7 @@
         "accounts_Cognitive_PVA_Region": {
             "defaultValue": "westus",
             "type": "String"
-        },
-        "vaultName": {
-            "type": "string",
-            "metadata": {
-                "description": "Specifies the name of the KeyVault, this vault must already exist."
-            }
         }
-
     },   
     "variables": {
         "StorageAccountName":"samplewebworflow"
