@@ -27,7 +27,8 @@
             "properties": {
                 "apiProperties": {},
                 "customSubDomainName": "samplewebworflow",
-                "publicNetworkAccess": "Enabled"
+                "publicNetworkAccess": "Enabled",
+                "storageAccountConnectionString": "AccountName=samplewebworflow"
             }
             
         }
