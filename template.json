@@ -6,7 +6,8 @@
             "defaultValue": "westus",
             "type": "String"
         }
-    },
+    },   
+    "variables": {},
     "resources": [
         {
             "type": "Microsoft.CognitiveServices/accounts",
@@ -26,7 +27,6 @@
                 "customSubDomainName": "samplewebworflow",
                 "publicNetworkAccess": "Enabled"
             }
-            
         }
     ]
 }
