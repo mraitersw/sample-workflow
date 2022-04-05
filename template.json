@@ -7,9 +7,7 @@
             "type": "String"
         }
     },   
-    "variables": {
-        "StorageAccountName":"samplewebworflow"
-    },
+    "variables": {},
     "resources": [
         {
             "type": "Microsoft.CognitiveServices/accounts",
@@ -27,16 +25,8 @@
             "properties": {
                 "apiProperties": {},
                 "customSubDomainName": "samplewebworflow",
-                "publicNetworkAccess": "Enabled",
-                "storageAccountConnectionString": "AccountName=samplewebworflow"
+                "publicNetworkAccess": "Enabled"
             }
-            
         }
-    ],
-    "outputs": {
-        "rkkeyvault": {
-          "value": "[Concat('DefaultEndpointsProtocol=https;AccountName=',variables('StorageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('StorageAccountName')), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).keys[0].value)]",  
-          "type": "string"
-        }
-      }   
+    ]
 }
