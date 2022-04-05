@@ -12,7 +12,7 @@
         {
             "type": "Microsoft.CognitiveServices/accounts",
             "apiVersion": "2021-10-01",
-            "name": "samplewebworflow",
+            "name": "samplewebworflow1",
             "location": "[parameters('accounts_Cognitive_PVA_Region')]",
             "sku": {
                 "name": "S0"
@@ -24,7 +24,7 @@
             },
             "properties": {
                 "apiProperties": {},
-                "customSubDomainName": "samplewebworflow",
+                "customSubDomainName": "samplewebworflow1",
                 "publicNetworkAccess": "Enabled"
             }
         }
