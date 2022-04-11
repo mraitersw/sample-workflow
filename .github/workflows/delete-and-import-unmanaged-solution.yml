@@ -38,7 +38,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: set-pac-path
-        uses: ./.github/actions/set-pac-path
+        uses: ./.github/workflows/actions/set-pac-path
 
       # Some Dataverse calls in this workflow cannot run async.  Therefore, they will fail
       # If someone runs more than one workflow against the environment at the same time.

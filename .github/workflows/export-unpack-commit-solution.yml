@@ -44,7 +44,7 @@ jobs:
       # for certain commands, we need to use it directly.  So we set the path to pac
       # that ships with the Actions
       - name: set-pac-path
-        uses: ./.github/actions/set-pac-path
+        uses: ./.github/workflows/actions/set-pac-path
 
       - name: create new git branch
         if: github.event.inputs.branch_to_create != ''
