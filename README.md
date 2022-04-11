@@ -53,7 +53,3 @@ This bot has been created using [Bot Framework](https://dev.botframework.com), i
 ## Interacting with the bot
 
 Enter text in the emulator. The text will be echoed back by the bot.
-
-## Deploy the bot to Azure
-
-To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](https://aka.ms/azuredeployment) for a complete list of deployment instructions.
